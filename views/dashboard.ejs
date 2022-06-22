@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Family Application to increase communication and bonding - Home Page"/>
+
+  <title><%= title %></title>
+
+    <!-- CSS Stylesheets -->
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/navbar.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/get-a-quote-form.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lato|Raleway" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/coffee-website-favicon.jpg">
+
+</head>  
+
+<body>
+
+    <div class="topbanner" id="nav-sect">
+      <nav class="navbar navbar-default navbar-static navbar-transparent" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+              <img alt="Brand" src="/images/coffee-shop-logo.png" class="logo">
+            </a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=" .navbar-collapse">
+              <span class="sr-only">Toggle navigation </span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div><!--end navbar-header-->
+          <div class="collapse navbar-collapse" align="center">
+            <ul class="nav navbar-nav">          
+            
+                <% if (1 === 1) { %>
+                  <li id="admin" align="center"><a href="/registration">Registration</a></li>
+                  <li id="admin" align="center"><a href="/login">Login</a></li>
+                  <li id="admin" align="center"><a href="/contact">Contact</a></li>
+                  <li id="admin" align="center"><a href="/dashboard">Dashboard</a></li>
+                  <li id="admin" align="center"><a href="/trivia">Trivia</a></li>
+                  <li id="admin" align="center"><a href="/products">Products</a></li>
+                  <li id="admin" align="center"><a href="/debug">Debug</a></li>
+                  <li id="admin" align="center"><a href="/logout">Logout</a></li>
+                <% } else { %>
+                  <li align="center"><a href="/trivia">Trivia</a></li>
+                  <li align="center"><a href="/products">Products</a></li>
+                  <li align="center"> <a href="/contact">Contact Me</a></li>
+                  <li align="center"><a href="/logout">Logout</a></li>
+               <% } %>
+              
+            </ul>
+          </div><!--end navbar-collapse-->
+        </div><!--end container-->
+      </nav><!--end nav-->
+      <h1 align="center">Johnson-Thomas Estate<br /><span class="cursive">Favorite Things Project</span></h1>
+    </div><!--end topbanner-->
+  
+    <div class="contactusform" id="favorite-form-sect">
+      <div class="row contact-info">
+      <!--Contact Details Column-->
+        <div class="col-md-6 contact-details" align="center">
+  
+          <!--Favorite Options Weekly Display-->
+            <div>
+              <h4 class="contact-heading" style="margin-top: 20px">Favorite Topic</h4>
+                <p class="info"><strong><%= topicObject.topic %></strong> - <%= topicObject.description %>
+                </p>
+            </div><!--end contact-info-->
+            <hr>
+          <!--end Favorite Options Weekly Display-->
+  
+          <!--Random Image API Request-->
+            <div class="stock_photo">
+                  <img style="padding-bottom: 25px" class="img-responsive" src= 
+                    <%=imageMedium%>
+                  alt='photo'>       
+              <span>
+                <a href="https://www.pexels.com"><img src="https://images.pexels.com/lib/api/pexels.png" alt="Pexels Logo" style="width:150px"/></a>
+                </span>
+                This <a href=<%=imageUrl%>>Photo</a> was taken by <a href=<%=photographerUrl%>><%=photographerName%></a> on Pexels.
+              </span>
+            </div>
+            <hr>
+          <!--Random Image API Request-->
+  
+          <!--Random Quote API Request-->  
+            <div style="margin-top: 20px">
+              <h4 class="contact-heading"><strong>Interesting Quote</strong></h4>
+              <blockquote class="blockquote-reverse">
+                <p style='font-style: italic'><%=quote%></p>
+                <footer><%=quoteAuthor%></footer>                        
+              </blockquote>
+            </div>
+          <!--end Random Quote API Request-->
+  
+        </div>
+      <!--Contact Details Column-->
+      <!--Email Form Column-->
+        <div class="col-md-6 emailForm" align="center">
+          <h4 style="margin-top: 20px"> Enter your Favorite for the Week!</h4>
+          <form method="post" action="">
+            <div class="form-group">
+              <label for="sel1">Select Topic from Dropdown List</label>
+              <select class="form-control" id="sel1" name="topic">
+                <% topicsObject.forEach (topic => { %>
+                  <option value=<%=topic.topic%>><%=topic.topic%></option>
+                <% }) %>
+              </select>
+              <!--input type="text" name="topic" class="form-control" placeholder="Topic for the Week" value="<?php echo $_POST['topic']; ?>" -->
+            </div><!--end form-group-->
+            <div class="form-group">
+              <input type="text" name="favorite" class="form-control" placeholder="Your Favorite"/>
+            </div><!--end form-group-->
+            <div class="form-group">
+              <textarea class="form-control" id="message" name="comment" placeholder="Comment"></textarea>
+            </div><!--end form-group-->
+            <div class="form-group">
+              <input type="submit" name="submit" class="btn btn-lg" style="background-color: #ffb701" value="Submit Favorite" />
+            </div><!--end form-group-->
+          </form>
+        </div>
+      <!--end Email Form Column-->  
+      </div><!--end row contact info-->
+    </div><!--end contactusform-->
+  
+    <div class="container-fluid" id="favorite-list-sect">
+      <h2 class="text-center text-capitalize">Sample Favorites from Family</h2>
+      <div class="row">
+      <!--Display Favorites-->
+      <% for(var i=0; i<3; i++) { %>
+        <div class="col-sm-4">
+            <table class="table table-bordered" style="border-style: solid; border-width: 5px; background-color: #ffb701;">
+                <thead>
+                <tr>
+                    <th style="width:30%">Name</th>
+                    <th style="width:70%">Content</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>User Name</td>
+                    <td><%= favoritesObject[randArray[i]].username %></td>
+                </tr>
+                <tr>
+                    <td>Topic</td>
+                    <td><%= favoritesObject[randArray[i]].topic %></td>
+                </tr>
+                <tr>
+                    <td>Favorite</td>
+                    <td><%= favoritesObject[randArray[i]].favorite %></td>        
+                </tr>
+                <tr>
+                    <td>Comments</td>
+                    <td><%= favoritesObject[randArray[i]].comments %></td>        
+                </tr>
+                </tbody>
+            </table>
+        </div><!--end col-md-2-->
+        <% } %>
+        
+        
+
+      <!--end Display Favorites-->
+      </div><!--- /.row--> 
+    </div><!--- /.container-->
+    
+    <div class="exclusive-group" id="login-stat-sect" align="center">
+      <p>
+        
+        <% if (1 === 1) { %>
+            You are Logged In as: username.
+        <%  } else { %>
+            Log in to Enter your Favorites.
+        <%  } %>
+          
+        <!-- <a href="#"><span style="color: white">Link</span></a> -->
+      </p>
+    </div><!--end exclusive-group-->
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="/javascripts/bootstrap.min.js"></script>
+  
+  </body>
+  </html>

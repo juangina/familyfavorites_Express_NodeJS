@@ -1,0 +1,138 @@
+.card-container {
+	display:flex;
+  justify-content:center;
+  background-color: #86bdfd;
+}
+
+.card{
+  width: 620px;
+}
+
+.question-text {
+  font-family: Source Sans Pro;
+  font-size: 42px;
+  line-height: 1.29;
+  letter-spacing: 0.4px;
+  color: #0b2748;
+}
+
+.question{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: #86bdfd;
+}
+
+.hint-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #0b2748;
+  cursor: pointer;
+}
+
+.reset-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #0b2748;
+  cursor: pointer;
+}
+
+.hint{
+  box-sizing: border-box;
+  width:100%;
+  padding: 30px 0;
+  background-color: #0b2748;
+  text-align: center;
+  display: none;  /*This is the animation*/
+  
+  
+}
+
+.answer{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  border-radius: 2.2px;
+  cursor: pointer;
+  
+}
+
+/*.wrong-answer-one{*/
+.answer-one{  
+  background-color: #ffffff;
+}
+
+/*.correct-answer{*/
+.answer-two{  
+  background-color: #edf5ff;
+}
+
+/*.wrong-answer-two{*/
+.answer-three{
+  background-color: #ffffff;
+}
+
+/*.wrong-answer-three{*/
+.answer-four{
+  background-color: #edf5ff;
+}
+
+.result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  border-radius: 2.2px;
+  background-color: #0b2748;
+}
+.smiley{
+  display: none;  /*This is the animation*/
+}
+
+.frown{
+  display: none;  /*This is the animation*/
+}
+
+.emoticon{
+  display: block;
+}
+
+.hide-hint-text{
+  font-family: Source Sans Pro;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 0.48;
+  letter-spacing: 0.4px;
+  color: #4a90e2;
+}
+
+.reset-hint-text{
+  font-family: Source Sans Pro;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 0.48;
+  letter-spacing: 0.4px;
+  color: #4a90e2;
+}
+
+.answer-text {
+ 
+  font-family: Source Sans Pro;
+  font-size: 30px;
+  line-height: 1.20;
+  letter-spacing: 0.3px;
+  text-align: left;
+  color: #0b2748;
+  padding-left: 50px;
+}
+
